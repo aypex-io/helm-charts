@@ -1,0 +1,25 @@
+apiVersion: v2
+name: ruby-on-rails
+version: 0.2.6
+description: |
+  A helm chart for running a ruby-on-rails applications.
+
+  This chart runs a kubernetes deployment, service, hpa, ingress, job & cron jobs.
+
+type: application
+maintainers:
+  - name: Aypes.io
+    email: engineering@aypex.io
+sources:
+  - https://github.com/aypex-io/helm-charts
+kubeVersion: ">=1.16.0-0"
+home: https://github.com/aypex-io/helm-charts
+keywords:
+  - ruby-on-rails
+  - ruby
+  - rails
+annotations:
+  "artifacthub.io/license": MIT License
+  "artifacthub.io/links": |
+    - name: Chart Source
+      url: https://github.com/aypex-io/helm-charts

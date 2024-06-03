@@ -1,0 +1,50 @@
+{{- if and .Values.cron_job.enabled .Values.cron_job.schedule -}}
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: {{ include "application.fullname" . }}-{{ .Release.Revision }}
+  labels:
+    {{- include "application.labels" . | nindent 4 }}
+spec:
+  schedule: "{{ .Values.cron_job.schedule }}"
+  jobTemplate:
+    spec:
+      template:
+        metadata:
+          {{- with .Values.pod.annotations }}
+          annotations:
+            {{- toYaml . | nindent 14 }}
+          {{- end }}
+          labels:
+            {{- include "application.labels" . | nindent 12 }}
+        spec:
+          restartPolicy: Never
+          serviceAccountName: {{ include "application.fullname" . }}
+          {{- with .Values.imagePullSecrets }}
+          imagePullSecrets:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+          {{- with .Values.podSecurityContext }}
+          securityContext:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+          containers:
+            - name: {{ include "application.fullname" . }}
+              image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+              imagePullPolicy: Always
+              envFrom:
+                - secretRef:
+                    name: {{ include "application.fullname" . }}
+              {{- with .Values.cron_job.command }}
+              command:
+                {{- toYaml . | nindent 16 }}
+              {{- end }}
+              {{- with .Values.cron_job.args }}
+              args:
+                {{- toYaml . | nindent 16 }}
+              {{- end }}
+              {{- with .Values.securityContext }}
+              securityContext:
+                {{- toYaml . | nindent 16 }}
+              {{- end }}
+{{- end }}

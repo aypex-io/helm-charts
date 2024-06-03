@@ -1,0 +1,56 @@
+# Enables/disable deployment.
+# For a web app enable a deployment.
+deployment:
+  enabled: false
+
+image:
+  repository:
+  tag:
+
+command: []
+args: []
+
+envs: []
+port:
+
+serviceAccount:
+  enabled: true
+  annotations: {}
+  name:
+
+resourceRequests: {}
+resourceLimits: {}
+
+replicas:
+  autoscalingEnabled: false
+  replicaCount:
+  minReplicas:
+  maxReplicas:
+  targetCPUUtilizationPercentage:
+
+
+svcPort: 3000
+
+ingress:
+  annotations: {}
+  enabled: false
+  className:
+  host:
+  path:
+
+commonLabels: {}
+
+# Pod Config
+pod:
+  annotations: {}
+
+# Job Setup
+job:
+  enabled: false
+  command: []
+  args: []
+
+cron_job:
+  enabled: false
+  command: []
+  args: []
