@@ -7,6 +7,32 @@ entries:
         - name: Chart Source
           url: https://github.com/aypex-io/helm-charts
     apiVersion: v2
+    created: "2024-06-03T12:23:07.532384161Z"
+    description: 'A helm chart for running a ruby-on-rails applications.  This chart
+      runs a kubernetes deployment, service, hpa, ingress, job & cron jobs. '
+    digest: 1f6fce45f5c2b293524c9872deb05a8be7c372ccefb1b494f6bee6ca4df0fdad
+    home: https://github.com/aypex-io/helm-charts
+    keywords:
+    - ruby-on-rails
+    - ruby
+    - rails
+    kubeVersion: '>=1.16.0-0'
+    maintainers:
+    - email: engineering@aypex.io
+      name: Aypes.io
+    name: ruby-on-rails
+    sources:
+    - https://github.com/aypex-io/helm-charts
+    type: application
+    urls:
+    - https://github.com/aypex-io/helm-charts/releases/download/ruby-on-rails-0.2.8/ruby-on-rails-0.2.8.tgz
+    version: 0.2.8
+  - annotations:
+      artifacthub.io/license: MIT License
+      artifacthub.io/links: |
+        - name: Chart Source
+          url: https://github.com/aypex-io/helm-charts
+    apiVersion: v2
     created: "2024-06-03T08:54:46.952837961Z"
     description: 'A helm chart for running a ruby-on-rails applications.  This chart
       runs a kubernetes deployment, service, hpa, ingress, job & cron jobs. '
@@ -27,4 +53,4 @@ entries:
     urls:
     - https://github.com/aypex-io/helm-charts/releases/download/ruby-on-rails-0.2.7/ruby-on-rails-0.2.7.tgz
     version: 0.2.7
-generated: "2024-06-03T08:54:46.952849492Z"
+generated: "2024-06-03T12:23:07.532396614Z"
