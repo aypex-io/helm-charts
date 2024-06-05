@@ -18,6 +18,9 @@ serviceAccount:
   annotations: {}
   name:
 
+service:
+  annotations: {}
+
 resourceRequests: {}
 resourceLimits: {}
 
